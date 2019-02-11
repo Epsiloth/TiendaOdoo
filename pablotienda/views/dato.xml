@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="pablotienda_clientes_action" name="clientes"
+                     res_model="pablotienda.clientes" />
+        <act_window id="pablotienda_proveedores_action" name="proveedores"
+                     res_model="pablotienda.proveedores" />
+        <act_window id="pablotienda_articulos_action" name="articulos"
+                     res_model="pablotienda.articulos" />
+        <act_window id="pablotienda_ventas_action" name="articulos"
+                     res_model="pablotienda.ventas" />
+
+
+        <record id="pablotienda_clientes_view_tree" model="ir.ui.view">
+            <field name="name">clientes</field>
+            <field name="model">pablotienda.clientes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                </tree>
+            </field>
+        </record>
+
+         <record id="pablotienda_proveedores_view_tree" model="ir.ui.view">
+            <field name="name">proveedores</field>
+            <field name="model">pablotienda.proveedores</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                </tree>
+            </field>
+        </record>
+
+         <record id="pablotienda_articulos_view_tree" model="ir.ui.view">
+            <field name="name">articulos</field>
+            <field name="model">pablotienda.articulos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre" />
+                    <field name="precio" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="pablotienda_ventas_view_tree" model="ir.ui.view">
+            <field name="name">ventas</field>
+            <field name="model">pablotienda.ventas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="articulo" />
+                    <field name="cliente" />
+                    <field name="total" />
+                    <field name="cantidad" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="pablotienda_clientes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda clientes</field>
+            <field name="model">pablotienda.clientes</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                </search>
+            </field>
+        </record>
+
+        <record id="pablotienda_proveedores_view_search" model="ir.ui.view">
+            <field name="name">Busqueda proveedores</field>
+            <field name="model">pablotienda.proveedores</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                </search>
+            </field>
+        </record>
+
+        <record id="pablotienda_articulos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda articulos</field>
+            <field name="model">pablotienda.articulos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="precio" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="pablotienda_ventas_view_search" model="ir.ui.view">
+            <field name="name">Busqueda ventas</field>
+            <field name="model">pablotienda.ventas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="articulo" />
+                    <field name="cliente" />
+                    <field name="cantidad" />
+                    <field name="total" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="pablotienda" id="menu_top" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_top" sequence="10"/>
+        <menuitem name="clientes" id="menu_clientes" action="pablotienda_clientes_action" parent="menu_inicio" sequence="10"/>
+        <menuitem name="proveedores" id="menu_proveedores" action="pablotienda_proveedores_action" parent="menu_inicio" sequence="10"/>
+        <menuitem name="articulos" id="menu_articulos" action="pablotienda_articulos_action" parent="menu_inicio" sequence="10"/>
+        <menuitem name="ventas" id="menu_ventas" action="pablotienda_ventas_action" parent="menu_inicio" sequence="10"/>
+
+    </data>
+</odoo>
